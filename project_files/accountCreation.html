@@ -1,23 +1,59 @@
 <!DOCTYPE html>
-<html> 
+<html>
     <head>
         <title>Account Creation</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
+
+      <style>
+      body {
+          background-image: url('login_bg.png');
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: cover;
+        }
+
+        div {
+          padding-top: 50px;
+        }
+
+        .create {
+          display: block;
+          padding: 12px 15px;
+          font-size: 20px;
+          cursor: pointer;
+        }
+
+        .input {
+          display: block;
+          padding: 10px 10px;
+          cursor: pointer;
+        }
+
+      </style>
+
+      <center>
+        <font size="+2">
+        <b>
         <form action='addTeacher.php' method= 'post'>
             <h1 style="text-align:center;">SCI's The Limit Education</h1>
             <h2 style="text-align:center;">Account Creation</h2>
+
+            <div>
             <label for="username">Username: (must be less than 20 characters)</label><br>
-            <input type="text" id="username" name="username"><br>
+            <input class = input type="text" id="username" name="username"><br>
             <label for="email">Email:</label><br>
-            <input type="text" id="email" name="email"><br><br>
+            <input class = input type="text" id="email" name="email"><br><br>
             <label for="password">Password: (must be exactly 6 characters)</label><br>
-            <input type="password" id="password" name="password"><br>
+            <input class = input type="password" id="password" name="password"><br>
             <label for="confpassword">Confirm Password:</label><br>
-            <input type="password" id="confpassword" name="confpassword"><br>
-            <button name="submit">Create Account</button><br>
+            <input class = input type="password" id="confpassword" name="confpassword"><br>
+            <button name="submit" class =create>Create Account</button><br>
         </form>
+      </b>
+      </font>
+      </center>
     </body>
 </html>
