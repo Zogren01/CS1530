@@ -40,7 +40,7 @@
         <h1>English</h1><br><br>
         <?php
             $class = $curr['class'];
-            $_SESSION['subject'] = 'enlgish';
+            $_SESSION['subject'] = 'english';
             $assignments = $db->query("SELECT * FROM assignments WHERE class = $class AND subjectType = '3';");
             if($assignments->num_rows){
                 echo "<table style='width:80%; background-color:white; margin-left:auto;

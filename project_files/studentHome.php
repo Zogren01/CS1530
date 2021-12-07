@@ -1,8 +1,17 @@
 <?php
     include 'header.php';
     $curr = $_SESSION['userinfo'];
+    $username = $curr['username'];
+    $user = 'root';
+    $pass = '';
+    $db = 'scisthelimit';
+
+    $db = new mysqli('localhost', $user, $pass, $db) or die("unable to connect");
+    $temp = $db->query("SELECT * FROM profiles WHERE username = '$username';");
+    $curr = $temp->fetch_assoc();
 ?>
 <!DOCTYPE html>
+
 <html>
     <head>
         <title>Student Home</title>
@@ -60,11 +69,6 @@
                 <tr>
                     <th>
                         <a href="./assignments.php">Assignments Page</a>
-                    </th>
-                </tr>
-                <tr>
-                    <th>
-                        <p onclick="chat()">Chat</p>
                     </th>
                 </tr>
                 <tr>

@@ -23,7 +23,7 @@
             }
         }
         $db->query("INSERT INTO assignments (assignID, class, subjectType, name) 
-			VALUES($id, $class, $subject, '$name');");
+			VALUES($id, $class, '$subject', '$name');");
         
         $db->query("CREATE TABLE `$id` 
                 ( `questions` VARCHAR(150) NOT NULL , `answers` VARCHAR(50) NOT NULL ) ENGINE = InnoDB;");

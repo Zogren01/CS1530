@@ -155,6 +155,7 @@ function startGame(){
     console.log(subject);
     myGameArea.start();
     bg.src = './'+subject+'_bg.png';
+    //console.log(br.src);
     player = new p(2, 22, 2, 2);//should put player in bottom left corner
     wall0 = new obstacle(0, 0, 1, 24, 0, 0, 1);    //left and right side walls
     wall1 = new obstacle(47, 0, 1, 24, 0, 0, 1);  
@@ -378,20 +379,20 @@ function updateGameArea() {
   if(levelClear){
     let result = window.prompt(questions[levelNo]);
     levelClear = false;
+    keyPressed = false;
+    player.x = 1;
+    player.y = 22;
+    player.dx = 0;
+    player.dy = 0;
     if(result == answers[levelNo]){
         levelNo++;
         if(levelNo == toClear){
             alert('Game complete, returning to home page');
             //update assignment database
-            window.location.href = 'studentHome.php';
+            window.location.href = 'updateScore.php';
         }
         else{
-            keyPressed = false;
             loadLevel();
-            player.x = 1;
-            player.y = 22;
-            player.dx = 0;
-            player.dy = 0;
         }
     }
     else{
